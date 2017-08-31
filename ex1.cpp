@@ -1,3 +1,12 @@
+/*
+CPSC 121-0X
+Paul De Palma
+depalma
+Example 1
+*/
+
+//i/o, variables, arithmetic operator, assignment 
+
 #include <iostream>
 using namespace std;
 
