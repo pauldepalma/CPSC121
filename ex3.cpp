@@ -5,29 +5,30 @@ depalma
 Example 3 
 */
 
-//while loop 
+//while loop, named constants, accumulator pattern 
 
 #include <iostream>
 using namespace std;
 
+const int BASE = 3;
+const int POW = 3;
+
 int main()
 {
- int accum, base, pow, i; 
+ int accum, i;  
 
  accum = 1;
- base = 3;
- pow = 3;
  i = 0;
 
- while (i < base)
+ while (i < POW)
  {
-   accum = accum * base;
+   accum = accum * BASE;
    i = i + 1;
  } 
 
  
  cout << endl;
- cout << base << " to the power of " << pow << " equals " << accum;
+ cout << BASE << " to the power of " << POW << " equals " << accum;
  cout << endl;
  cout << endl;
 
