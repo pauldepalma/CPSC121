@@ -5,8 +5,7 @@ depalma
 Example 11 
 */
 
-//A simple if statement 
-//A classic while loop
+//working with modulus 
 
 #include <iostream>
 #include <cstdlib> //for rand and srand
