@@ -2,7 +2,7 @@
 CPSC 121-0X
 Paul De Palma
 depalma
-Example 13 
+Example 16 
 */
 
 //DeMorgan 

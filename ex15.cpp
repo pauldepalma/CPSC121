@@ -5,7 +5,7 @@ depalma
 Example 15 
 */
 
-//a more complex if statement 
+//<= and >=, nested if 
 
 #include <iostream>
 using namespace std;

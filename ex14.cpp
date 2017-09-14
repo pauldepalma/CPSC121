@@ -5,7 +5,7 @@ depalma
 Example 14 
 */
 
-//relational operators, if .. else 
+//relational operators, format of if ... else 
 
 #include <iostream>
 using namespace std;
@@ -16,16 +16,16 @@ int main()
 
  int x = 5, y = 10;  //not the initialization
 
- if (x == y)
-  cout << "X equals Y" << endl;
+ if (x < y)
+   cout << "X < Y" << endl;
  else
-  cout << "X does not equal Y" << endl; 
-
- trueValue = x < y;
- falseValue = x == y;
-
- cout << "True is internally " << trueValue << endl;
- cout << "False is internally " << falseValue << endl;
+   if (x == y)
+     cout << "X = Y" << endl;
+   else
+     if (x > y)
+       cout << "X > Y" << endl;
+     else
+       cout << "There are not other possibilities" << endl;
 
  return 0;
 
