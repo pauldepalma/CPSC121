@@ -2,46 +2,36 @@
 CPSC 121-0X
 Paul De Palma
 depalma
-Example 19 
+Example 20 
 */
 
-//C-strings, getline, strlen 
+//using cin.get to read in read in multiple characters 
 
 #include <iostream>
-#include <cstring> //header files for C-string functions
 using namespace std;
 
-const int SIZE  = 80;
+const char EOL = '\n';
+const int MAX  = 80;
 
 int main()
 {
- char line[SIZE]; //holds the C-string
+ char stuff[MAX], ch;
 
- cout << "Enter a sentence of no more than "
-      << (SIZE - 1) << " characters:\n";
+ int ct = 0;
 
- cin.getline(line,SIZE);  //store input in the array, line
+ cout << "Enter a string of not more than " << MAX << " characters" << endl;
 
- cout << line << endl;  //one way to print
+ //common structure for a read loop 
+ ch = cin.get();   
+ while(ch != EOL && ct < MAX - 1)
+ {
+  stuff[ct] = ch; 
+  ct++;
+  ch = cin.get();
+ }
 
- for (int i = 0; line[i] != '\0'; i++) //'\0' null terminator
-      cout << line[i];
- cout << endl; 
-
- //now we can do more interesting things
- int i = strlen(line);
-
- while (i >= 0)
-  {
-   cout << line[i];
-   --i;
-  }
- cout << endl;  
-
- //the same thing but with a for loop
- for (int i = strlen(line); i >= 0; i--)
-   cout << line[i];
- cout << endl;
-
+ stuff[ct] = '\0';
+ cout << stuff << endl; 
+ 
  return 0;
 }
