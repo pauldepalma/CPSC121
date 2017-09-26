@@ -13,14 +13,13 @@ using namespace std;
 
 bool isOdd(int); 
 
-bool more(int); 
+bool more(); 
 
 const int MAX  = 80;
 
 int main()
 {
  int num = 0;
- char more;
 
  do
   {
@@ -36,18 +35,18 @@ int main()
 
     cout << "Would you like to try another (y/n)?" << endl;
 
-  } while (more);
+  } while (more());
  
 }
 
-bool more()
+bool isOdd(int num)
 {
  if (num % 2 == 0)
    return false;
  return true;
 }
 
-char checkInp()
+bool more()
 {
  char inp;
 
@@ -57,7 +56,7 @@ char checkInp()
    if (inp == 'y' || inp == 'Y')
      return true;
    else
-     if inp == 'n' || inp == N')
+     if (inp == 'n' || inp == 'N')
        return false;
      else
        cout << "Incorrect input. Enter y/n" << endl;
