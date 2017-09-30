@@ -22,6 +22,9 @@ int main()
  //stop when MAX characters have been read or '\n' is encountered.
  cin.getline(line,MAX,'\n');
 
+ //strcmp returns 0 if the first parameter is the same as the second
+ //Double quotes indicate that y is a C-string, i.e., stored in a 
+ //two position array terminated by '\0'
  if (strcmp(line,"y") == 0) 
   cout << "y was entered" << endl;
  else

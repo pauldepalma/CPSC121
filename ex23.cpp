@@ -10,6 +10,7 @@ Example 23
  
 #include <iostream>
 using namespace std; 
+
 int mystrlen(char[]);
 
 const int MAX  = 80;
@@ -26,6 +27,11 @@ int main()
  
  return 0;
 }
+
+/*
+Pre:  strIn is a C-string
+Post: returns the number of characters in strIn, not including '\0'
+*/ 
 
 int mystrlen(char strIn[])
 {

@@ -18,7 +18,8 @@ int main()
  
  cout << "Enter a string of not more than " << MAX << " characters" << endl;
 
- cin.getline(line,MAX);
+ //stop when MAX characters have been read or '\n' is encountered.
+ cin.getline(line,MAX,'\n');
 
  cout << line << endl; 
  

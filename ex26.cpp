@@ -13,12 +13,13 @@ using namespace std;
 
 bool isOdd(int); 
 
+bool more(); 
+
 const int MAX  = 80;
 
 int main()
 {
  int num = 0;
- char more;
 
  do
   {
@@ -33,18 +34,31 @@ int main()
     cout << endl;
 
     cout << "Would you like to try another (y/n)?" << endl;
-    cin >> more;
-  } while (more == 'Y' || more == 'y');
+
+  } while (more());
  
 }
 
-/*
-Pre:  num is an integer
-Post: returns true if num is odd, false otherwise
-*/
 bool isOdd(int num)
 {
  if (num % 2 == 0)
    return false;
  return true;
+}
+
+bool more()
+{
+ char inp;
+
+ do
+  {
+   cin >> inp; 
+   if (inp == 'y' || inp == 'Y')
+     return true;
+   else
+     if (inp == 'n' || inp == 'N')
+       return false;
+     else
+       cout << "Incorrect input. Enter y/n" << endl;
+   } while(true);
 }

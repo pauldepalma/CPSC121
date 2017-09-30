@@ -5,42 +5,54 @@ depalma
 Example 24 
 */
 
-//A boolean function 
+//Functions can be nested
  
  
 #include <iostream>
-using namespace std; 
+using namespace std;
 
-bool isOdd(int); 
+bool isLower(char); 
+int numLowerCase(char[]);
 
-const int MAX  = 80;
+const int MAX = 80;
 
 int main()
 {
- int num = 0;
- char more;
-
- do
-  {
-    cout << "Enter an integer " << endl;
-    cin >> num;
+ char line[MAX];
  
-    cout << "The number is "; 
-    if (isOdd(num))
-      cout << "odd";
-    else
-      cout << "even";
-    cout << endl;
+ cout << "Enter a string of not more than " << MAX << " characters" << endl;
 
-    cout << "Would you like to try another (y/n)?" << endl;
-    cin >> more;
-  } while (more == 'Y' || more == 'y');
+ cin.getline(line,MAX);
+
+ cout << "You have input " << numLowerCase(line) << " lower case ";
+ cout << "characters" << endl;   
  
+ return 0;
 }
 
-bool isOdd(int num)
+/*
+Pre:  strIn is a null-terminated string
+Post: returns the number of lower case characters stored in strIn
+*/
+int numLowerCase(char strIn[])
 {
- if (num % 2 == 0)
-   return false;
- return true;
+ int ct = 0, idx = 0;
+ while (strIn[idx] != '\0')
+   {
+    if (isLower(strIn[idx]))
+       ct++;
+    idx++;
+   }
+ return ct;
+}
+
+/*
+Pre:  ch is an ASCII-encoded character 
+Post: returns true if ch is lower case, false otherwise 
+*/
+bool isLower(char ch)
+{
+ if (ch >= 'a' && ch <= 'z')
+   return true;
+ return false;
 }
