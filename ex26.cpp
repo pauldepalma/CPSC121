@@ -2,63 +2,28 @@
 CPSC 121-0X
 Paul De Palma
 depalma
-Example 25 
+Example 26 
 */
 
-//A boolean function 
- 
- 
+//cin precedes cin.get(). Try commenting out cin.ignore()
+
 #include <iostream>
-using namespace std; 
-
-bool isOdd(int); 
-
-bool more(); 
-
-const int MAX  = 80;
+using namespace std;
 
 int main()
 {
- int num = 0;
-
- do
-  {
-    cout << "Enter an integer " << endl;
-    cin >> num;
+ char ch;
+ int num;
  
-    cout << "The number is "; 
-    if (isOdd(num))
-      cout << "odd";
-    else
-      cout << "even";
-    cout << endl;
 
-    cout << "Would you like to try another (y/n)?" << endl;
+ cout << "Enter a number: ";
+ cin >> num;
+ cin.ignore(); 
 
-  } while (more());
- 
-}
+ cout << "Enter a character: ";
+ ch = cin.get();
 
-bool isOdd(int num)
-{
- if (num % 2 == 0)
-   return false;
- return true;
-}
-
-bool more()
-{
- char inp;
-
- do
-  {
-   cin >> inp; 
-   if (inp == 'y' || inp == 'Y')
-     return true;
-   else
-     if (inp == 'n' || inp == 'N')
-       return false;
-     else
-       cout << "Incorrect input. Enter y/n" << endl;
-   } while(true);
+ cout << num << endl;
+ cout << ch << endl;
+ return 0;
 }

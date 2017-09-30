@@ -5,7 +5,7 @@ depalma
 Example 22 
 */
 
-//testing input with getline and strcmp 
+//reading input with getline, testing input with cin 
 
 #include <iostream>
 #include <cstring>  //necessary for strcmp
@@ -16,17 +16,22 @@ const int MAX  = 80;
 int main()
 {
  char line[MAX];
+ char inp = 'y';
  
- cout << "Enter y or n" << endl;
+ while (inp == 'y')
+ {
+  cout << "Enter a sequence of < 80 characters" << endl; 
 
- //stop when MAX characters have been read or '\n' is encountered.
- cin.getline(line,MAX,'\n');
+  //stop with MAX chars have been read or return pressed
+  cin.getline(line,MAX,'\n');
 
- if (strcmp(line,"y") == 0) 
-  cout << "y was entered" << endl;
- else
-  cout << "something other than y was entered" << endl;
+  cout << "You entered: " << endl;
+  cout << line << endl;
 
+  cout << "Again?  Enter y or n" << endl;
+  cin >> inp;
+  cin.ignore();   //try commenting out this line
+ } 
  
  return 0;
 }
