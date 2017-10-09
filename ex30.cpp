@@ -2,7 +2,7 @@
 CPSC 121-0X
 Paul De Palma
 depalma
-Example 28 
+Example 30 
 */
 
 //reference variables 

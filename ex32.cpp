@@ -2,47 +2,44 @@
 CPSC 121-0X
 Paul De Palma
 depalma
-Example 28 
+Example 32 
 */
 
-//strcmp 
+//comparing strings: strcmp
 
 #include <iostream>
 #include <cstring>
 using namespace std;
 
-void shift(char[]);
+void compare(char[],char[]);
+
+const int MAX = 81;
 
 int main()
 {
- char line1[11];
- char line2[11];
- 
- cout << "Enter not more than 10 characters"<< endl;
- cin.getline(line1,11,'\n');
 
- cout << "Enter not more than 10 characters"<< endl;
- cin.getline(line2,11,'\n');
+ char word1[MAX]; 
+ char word2[MAX]; 
 
- cout << "You entered" << endl; 
- cout << line1 << endl;  
- cout << line2 << endl;
+ cout << "Enter a word" << endl;
+ cin.getline(word1,MAX - 1,'\n'); 
 
- if (strcmp(line1,line2) < 0)
-   cout << "line 1 comes before line 2" <<endl; 
+ cout << "Enter another word" << endl;
+ cin.getline(word2,MAX - 1,'\n'); 
 
- if (strcmp(line1,line2) == 0)
-   cout << "line 1 and line 2 are identical" <<endl; 
- 
- if (strcmp(line1,line2) > 0)
-   cout << "line 1 comes after line 2" <<endl; 
+ compare(word1,word2);
 
  return 0;
 }
 
-void shift(char line[])
-{
+void compare(char word1[], char word2[])
+{ 
+ int comp = strcmp(word1,word2);
 
- for (int i = 0; i < strlen(line); i++)
-   line[i] = toupper(line[i]);
-}
+ if (comp < 0)
+  cout << word1 << " is less than " << word2 << endl; 
+ if (comp == 0)
+  cout << word1 << " is the same as " << word2 << endl; 
+ if (comp > 0)
+  cout << word1 << " is greater than " << word2 << endl; 
+} 
