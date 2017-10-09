@@ -36,6 +36,8 @@ void determine(char inp,char output[])
    strcpy(output, "That's a digit");
  else if (isspace(inp)) 
    strcpy(output, "That's a space");
+ else if (ispunct(inp)) 
+   strcpy(output, "That's a punctuation character");
  else if (isprint(inp)) 
    strcpy(output, "That's a printable character");
  else
