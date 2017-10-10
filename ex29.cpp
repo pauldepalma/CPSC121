@@ -28,6 +28,11 @@ int main()
  return 0;
 }
 
+/*
+Pre:  Both parameters are ints and have been initialized
+Post: Nothing is changed in the calling function because
+      the parameters are local to shift
+*/
 void shift(int var1, int var2)
 {
  int buf;

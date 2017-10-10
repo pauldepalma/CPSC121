@@ -26,8 +26,14 @@ int main()
  cout << "variable var1 holds " << var1 << endl; 
  cout << "variable vari2 holds " << var2 << endl; 
  return 0;
-}
-
+} 
+ 
+/*
+Pre:  Both parameters are reference variables whose source has been
+      initialized
+Post: The variables referred to by the parameters have their values
+      exchanged
+*/
 void shift(int& var1, int& var2)
 {
  int buf;
