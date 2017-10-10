@@ -27,6 +27,11 @@ int main()
  
 }
 
+/*
+Pre:  inp is a single character, output is character array of 80 characters 
+Post: Uses character functions to determine the kind of character stored
+      in inp.  Uses strcpy to copy a string literal to output. 
+*/
 void determine(char inp,char output[])
 {
  char answ[80]; 

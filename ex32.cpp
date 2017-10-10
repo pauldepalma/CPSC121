@@ -32,6 +32,11 @@ int main()
  return 0;
 }
 
+/*
+Pre:  Both parameters are C-Strings
+Post: Displays a string that indicates the orthographical ordering of
+      the two parameters.
+*/    
 void compare(char word1[], char word2[])
 { 
  int comp = strcmp(word1,word2);

@@ -41,9 +41,12 @@ int main()
  return 0;
 }
 
+/*
+Pre:  line is a C-string filled with lower case characters
+Post: All characters in line are upper case
+*/   
 void shift(char line[])
 {
-
  for (int i = 0; i < strlen(line); i++)
    line[i] = toupper(line[i]);
 }
