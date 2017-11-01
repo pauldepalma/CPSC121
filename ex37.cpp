@@ -1,23 +1,60 @@
+/*
+CPSC 121-0X
+Paul De Palma
+depalma
+Example 38 
+*/
+
+//arrays of structs 
+
 #include <iostream>
+#include <cmath>
 using namespace std;
 
+const int MAX = 10;
+
+struct record
+{
+ int num;
+ char ch;
+};
+
+/*
+Pre:  data is an array of structs of type struct record
+Post: num and ch are filled with successive integers and characters 
+*/ 
+void load(record data[]);
+
+/*
+Pre:  data is an array of structs of type struct record
+Post: num and ch for each element in the array are displaye   
+*/ 
+void display(record data[]);
 
 int main()
 {
- int data[] = {10,9,8,7,6,5,4,3,2,1,0};
+ record data[MAX]; 
 
- for (int i = 10; i >= 0; i--)
-  for (int j = 0; j < i; j++)
-    {
-     if (data[j] > data[j+1])
-      {
-       int buf = data[j];
-       data[j] = data[j+1];
-       data[j+1] = buf;
-      }
-    }
-
- for (int i = 0; i < 11; i++)
-   cout << data[i] << endl;
- return 0;
+ load(data);
+ display(data);
+        
+ return 0; 
 }
+
+void load(record data[])
+{
+ int value = 0; 
+ for (int i = 0; i < MAX; i++)
+    {
+     data[i].num = value;
+     data[i].ch = 'A' + value;
+     value++;
+    }
+}
+
+ 
+void display(record data[])
+{
+ for (int i = 0; i < MAX; i++)
+   cout << data[i].num << " " << data[i].ch << endl;
+} 

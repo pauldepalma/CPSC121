@@ -5,7 +5,7 @@ depalma
 Example 0
 */
 
-//A famous first program
+//A first program
 
 
 #include <iostream>
