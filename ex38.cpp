@@ -2,7 +2,7 @@
 CPSC 121-0X
 Paul De Palma
 depalma
-Example 39
+Example 38 
 */
 
 //Demonstrates error-checking with two inputs 

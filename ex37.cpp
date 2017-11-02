@@ -2,7 +2,7 @@
 CPSC 121-0X
 Paul De Palma
 depalma
-Example 38 
+Example 37 
 */
 
 //arrays of structs 
