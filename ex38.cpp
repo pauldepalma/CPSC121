@@ -9,6 +9,7 @@ Example 38
 
 #include <iostream>
 #include <cstring>
+#include <cmath>
 using namespace std;
 
 /*
@@ -28,30 +29,10 @@ int main()
 {
  int num = getInt();
  char ch = getChar();
-
  cout << num << " " << ch << endl; 
  return 0;
 }
 
-int getInt()
-{
- int num;
-
- while(true)
- {
-  cout << "Enter an integer in the range [0,25]" << endl;
-  if (cin >> num) 
-    if (num >= 0 && num <= 25)
-      break; 
-  cin.clear();
-  cin.ignore();
-  cout << "Invalid input. Input must be an integer in the "; 
-  cout << "range [0,25]" << endl << endl;
- }
- cin.clear();
- cin.ignore();
- return num;
-}
 
 char getChar()
 {
@@ -74,3 +55,27 @@ char getChar()
  return ch;
 }
 
+int getInt()
+{
+ float numIn;
+ int num;
+
+ while(true)
+ {
+  cout << "Enter an integer in the range [0,25]" << endl;
+  if (cin >> numIn)
+    if (floor(numIn) == numIn)
+      { 
+       num = static_cast<int>(numIn);
+       if (num >= 0 && num <= 25)
+         break; 
+      }
+  cin.clear();
+  cin.ignore();
+  cout << "Invalid input. Input must be an integer in the "; 
+  cout << "range [0,25]" << endl << endl;
+ }
+ cin.clear();
+ cin.ignore();
+ return num;
+}
