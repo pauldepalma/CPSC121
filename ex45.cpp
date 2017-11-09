@@ -5,19 +5,20 @@ depalma
 Example 45 
 */
 
-//Reading a file
-//line at a time reading. 
+//line at a time reading, string type 
 
 #include <iostream>
 #include <fstream>    
+#include <string>
 using namespace std;
 
 int main()
 {
- string line; 
+ string line; //notice the new type 
+ string fileName = "ex40.txt";
 
  ifstream inputFile;         
- inputFile.open("ex40.txt"); 
+ inputFile.open(fileName); 
 
  getline(inputFile,line); 
  while (inputFile)

@@ -15,7 +15,7 @@ const int MAX = 81;
 
 int main()
 {
- char line[MAX];
+ char line[MAX]; 
  int howMany;
 
  ofstream outputFile;         //declare an output file object
@@ -29,7 +29,7 @@ int main()
  for (int i = 0; i < howMany; i++)
    {
     cout << "Enter line " << i + 1 << endl;
-    cin.getline(line,MAX-1, '\n');
+    cin.getline(line,MAX - 1,'\n');
     outputFile << line << endl;
    }
 
