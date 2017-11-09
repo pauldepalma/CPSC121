@@ -2,10 +2,10 @@
 CPSC 121-0X
 Paul De Palma
 depalma
-Example 40 
+Example 40
 */
 
-//A first look at files
+//Writing using <<
 
 #include <iostream>
 #include <fstream>   //data types used in file processing 
@@ -33,7 +33,7 @@ int main()
     outputFile << line << endl;
    }
 
- outputFile.close(); //tell the O/S that it's OK to writ the output buffer
+ outputFile.close(); //tell the O/S that it's OK to write the output buffer
                      //to the associated file. 
 
  return 0;

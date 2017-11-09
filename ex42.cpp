@@ -1,3 +1,4 @@
+
 /*
 CPSC 121-0X
 Paul De Palma
@@ -5,30 +6,26 @@ depalma
 Example 42 
 */
 
-//Reading a file
-//character by character reading
+//peculiar properties of <<
 
 #include <iostream>
-#include <fstream>    
+#include <fstream>   //data types used in file processing 
 using namespace std;
 
-const int MAX = 81;
 
 int main()
 {
- char ch; 
- int howMany;
+ int num;
+ int sum = 0;
 
  ifstream inputFile;         
- inputFile.open("ex40.txt"); 
+ //inputFile.open("ex42.txt"); 
+ inputFile.open("ex42a.txt"); 
 
- int i = 0;
- inputFile.get(ch); 
- while (inputFile)
-  {
-   cout << ch;
-   inputFile.get(ch); 
-  }
+ while (inputFile >> num)
+  sum = sum + num;
+
+ cout << sum << endl;
 
  inputFile.close(); 
 

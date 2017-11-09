@@ -2,32 +2,28 @@
 CPSC 121-0X
 Paul De Palma
 depalma
-Example 43 
+Example 45 
 */
 
 //Reading a file
-//character by character reading
+//line at a time reading. 
 
 #include <iostream>
 #include <fstream>    
 using namespace std;
 
-const int MAX = 81;
-
 int main()
 {
- char ch; 
- int howMany;
+ string line; 
 
  ifstream inputFile;         
  inputFile.open("ex40.txt"); 
 
- int i = 0;
- inputFile.get(ch); 
+ getline(inputFile,line); 
  while (inputFile)
   {
-   cout << ch;
-   inputFile.get(ch); 
+   cout << line << endl; //'\n' is the delimiter and not included in line; 
+   getline(inputFile,line); 
   }
 
  inputFile.close(); 

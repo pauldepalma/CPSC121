@@ -1,12 +1,12 @@
+
 /*
 CPSC 121-0X
 Paul De Palma
 depalma
-Example 40 
+Example 41 
 */
 
-//Reading a file
-//Are you surprised? 
+//Reading using <<
 
 #include <iostream>
 #include <fstream>   //data types used in file processing 
