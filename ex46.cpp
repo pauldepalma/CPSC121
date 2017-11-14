@@ -16,16 +16,18 @@ ifstream gfopen(string);
 
 int main()
 {
- string line;
- //string fileName = "ex40.txt"; 
- string fileName = "ex4.txt"; 
+ string line, fileName;
+ ifstream inputFile;
 
- ifstream inputFile = gfopen(fileName); 
+ cout << "Enter an input file name" << endl;
+ getline(cin,fileName); //notice the slightly different usage with a string 
 
- getline(inputFile,line); 
+ inputFile = gfopen(fileName); 
+
+ getline(inputFile,line);  //notice the analogous usage with a file   
  while (inputFile)
   {
-   cout << line << endl; //'\n' is the delimiter and not included in line; 
+   cout << line << endl; //'\n' is the default delimiter and not read in. 
    getline(inputFile,line); 
   }
 
@@ -36,12 +38,12 @@ int main()
 
 ifstream gfopen(string fileName)
 {
- ifstream inputFile;
+ ifstream fileIn;
  
- inputFile.open(fileName);
+ fileIn.open(fileName);
 
- if (inputFile)
-  return inputFile;
+ if (fileIn)
+  return fileIn;
 
  cout << "Error opening input file: " << fileName << endl;
  exit(0);
