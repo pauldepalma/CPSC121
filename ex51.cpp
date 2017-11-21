@@ -2,7 +2,7 @@
 CPSC 121-0X
 Paul De Palma
 depalma
-Example 50 
+Example 51 
 */
 
 //arrays of strings

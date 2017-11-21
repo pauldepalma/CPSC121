@@ -1,37 +1,41 @@
 /*
-CPSC 121-0X
+CPSC121-0X
 Paul De Palma
 depalma
-Example 53 
+Example 54
 */
 
-//Creating the BIFID key
+//pointer example
 
 #include <iostream>
-#include <string>    
 using namespace std;
 
-string getKey();
 
 int main()
 {
- string stuff[3][3];
+ //p is a pointer to int
+ int* p;
 
- cout << getKey() << endl;
+ int val1, val2;
 
-}
+ val1 = 12;
 
-string getKey()
-{ 
- string key;
- cout << "Enter up to 25 alphabetic characters with duplicates" << endl;
- getline(cin,key);
+ //& is the address operator.  Assign the address of val1 to p
+ p = &val1;
 
- for (int i = 0; i < 26; i++)
-  {
-   char ch = 'A' + i; 
-   if (key.find(ch) == string::npos)
-     key = key + ch;
-  }
- return key;
+ //*p causes the value of what p points to to be stored in val2
+ //this is called dereferencing
+ val2 = *p;
+
+
+ cout << "value of what p points to " << *p << endl;
+ cout << "value of val2 " << val2 << endl;
+
+ cout << "p holds the address of val1 " << p << endl;
+ cout << "val1's address is " <<  &val1 << endl;
+ cout << "notice that size of address and size of int differ" << endl;
+ cout << "size of address " << sizeof(p) << endl;
+ cout << "size of int " << sizeof(val1) << endl;
+
+ return 0;
 }
