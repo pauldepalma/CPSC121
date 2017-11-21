@@ -2,7 +2,7 @@
 CPSC121-0X
 Paul De Palma
 depalma
-Example 54
+Example 53
 */
 
 //pointer example
