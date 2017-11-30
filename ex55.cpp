@@ -1,44 +1,78 @@
 /*
-CPSC121-0X
+CPSC 121-0X
 Paul De Palma
 depalma
-Example 55
+Example 55 
 */
 
-//more dynamic declarations
-
+//Graceful open and graceful close
+//Simple character i/o
 
 #include <iostream>
+#include <fstream> 
+#include <string>    
 using namespace std;
+
+ifstream* gfopenIn(string);
+ofstream* gfopenOut(string);
+void doStuff(ifstream*,ofstream*);
+
 int main()
 {
- int* p1;
- int* p2;
+ string fileIn, fileOut; 
+ ifstream* fin;
+ ofstream* fout;
 
- //how much memory is allocated
- cout << sizeof(p1) << " " << sizeof(p2) << endl; 
+ cout << "Enter an input file name" << endl;
+ getline(cin,fileIn);
+ cout << "Enter an output file name" << endl;
+ getline(cin,fileOut);
 
- //allocate new memory, store the address in p1, store 42 in the new memory
- p1 = new int;
- *p1 = 42;
+ fin = gfopenIn(fileIn); 
+ fout = gfopenOut(fileOut); 
 
- //now p1 and p2 point to the same place 
- p2 = p1;
- cout << *p1 << " " << *p2 << endl;
- 
- //now we put something in what p2 points to
- *p2 = 53;
- cout << *p1 << " " << *p2 << endl;
+ doStuff(fin,fout);
 
-  p1 = new int;
- *p1 = 88;
+ //notice the member access operators, necessary with pointers
+ fin->close();
+ fout->close();
 
- cout << *p1 << " " << *p2 << endl;
- cout << p1 << " " << p2 << endl;
- delete p1; //return to heap
- delete p2;
- p1 = NULL;
- p2 = NULL;
  return 0;
 }
 
+ifstream* gfopenIn(string fileIn)
+{
+ ifstream* fin = new ifstream; 
+ 
+ fin->open(fileIn);
+ if (!fin->fail())
+   return fin;
+ cout << "Error opening input file: " << fileIn << endl;
+ exit(0);
+}
+
+ofstream* gfopenOut(string fileOut)
+{
+ ofstream* fout = new ofstream; 
+ 
+ fout->open(fileOut);
+
+ if (!fout->fail())
+   return fout; 
+ cout << "Error opening output file: " << fileOut << endl;
+ exit(0);
+}
+
+void doStuff(ifstream* fin, ofstream* fout)
+{
+ char ch;
+
+ fin->get(ch);
+ while(*fin)     //why the dereference operator.  Take a guess.
+ {
+  if (islower(ch))
+    ch = toupper(ch);
+  fout->put(ch);
+  fin->get(ch);
+ }
+}
